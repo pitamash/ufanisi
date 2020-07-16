@@ -61,9 +61,8 @@ Here is  list of what our API can do.
     }
 ```
 
-   - Register Shipment 
-    
-     <!-- Below is an example showing how to register a shipment request . -->
+## Register Shipment 
+-Below is an example showing how to register a shipment request, put ZERO (0) if value not available.
 
 ```php
      function  createShipment() 
@@ -109,7 +108,8 @@ Here is  list of what our API can do.
             return $response; 
         }
  ```
- # Register Shipment Response
+ ## Register Shipment Response
+ - Receive a response with shipmentID and status. Status might be pending or confirmed. You can save this in your database if necessary.
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
@@ -121,8 +121,8 @@ Here is  list of what our API can do.
         }
 ```
 
-# Cancel Shipment
-
+## Cancel Shipment
+- You can cancel shipment using this method sending your request with  shipmentid,orderid
 ``` php
     function cancelShipment(){
             $data= array();
@@ -136,7 +136,8 @@ Here is  list of what our API can do.
             return $response; 
     }
 ```
- # Cancel Shipment Response
+ ## Cancel Shipment Response
+ - This is the response you get when you cancel a shipment;
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
@@ -148,8 +149,8 @@ Here is  list of what our API can do.
         }
 ```
 
-# Track Shipment Request
-
+## Track Shipment Request
+- Track a shipment using this method.  Pass shipment id to each request;
 ``` php
     function trackShipment(){
             $data= array();
@@ -162,7 +163,9 @@ Here is  list of what our API can do.
     }
 ```
 
- # Track Shipment Response
+ ## Track Shipment Response
+ - Here is the response you get when you send a tracking request for a shipment.
+ - You can use this method in your customer tracking interface to query directly from the api. 
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
@@ -213,8 +216,8 @@ Here is  list of what our API can do.
         }
 ```
 
-# Get All Shipments Request
-
+## Get All Shipments Request
+- Request for all shipments. You can set maximum number of responses and order by given values.
 ``` php
     function getShipments(){
             $data= array();
@@ -228,7 +231,8 @@ Here is  list of what our API can do.
     }
 ```
 
- # Get All Shipments Response
+ ## Get All Shipments Response
+ - the response you get when you request all shipments as an array.
 ``` json 
 //  return al list of shipments associated with your API key / Domain.
         {
@@ -282,8 +286,8 @@ Here is  list of what our API can do.
 
 
 
-# Get Prices List Shipments Request
-
+## Get Prices List Shipments Request
+- Get ufanisi courier services price list based on orgin and destination.
 ``` php
     function getPricelist(){
             $data= array();
@@ -297,13 +301,14 @@ Here is  list of what our API can do.
     }
 ```
 
- # Get  priceList  Response
+ ## Get  priceList  Response
+ - price list response 
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": {
                 "origin":"",// 
-                "destination":"canceled", // pending approval;
+                "destination":"",  
                 "pricelist":[{
                     "currency":"KSH",
                     "amount":"1000",
@@ -313,8 +318,8 @@ Here is  list of what our API can do.
         }
 ```
 
-# Get Destinations Request
-
+## Get Destinations Request
+- Request all destinations that ufanisi courier services serve.
 ``` php
     function getPricelist(){
             $data= array();
@@ -327,7 +332,8 @@ Here is  list of what our API can do.
     }
 ```
 
- # Get  Destinations  Response
+ ## Get  Destinations  Response
+ - Destinations Response 
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
@@ -337,16 +343,18 @@ Here is  list of what our API can do.
                  }] 
         }
 ```
-# WEBHOOKS
+## WEBHOOKS
 - Register a tracking webhook.
-- Webhooks typically are used to connect two different applications. When an event happens on the trigger application, it serializes data about that event and sends it to a webhook URL from the action application—the one you want to do something based on the data from the first application. 
+- Webhooks typically are used to connect two different applications. When an event happens on the trigger application, it serializes data about that   event and sends it to a webhook URL from the action application—the one you want to do something based on the data from the first application. 
 
 - You can register your webhook(s) for a Shipments updates, this way, UFANISI  will send HTTP notifications to your provided url  whenever the status changes.
 
 - Your webhook url should be able to receive the data and update your database at anytime or even perform other function like sending SMS & Email notifictions with your own implementation.
 - Login to your account in https://api.ufanis.co.ke and add your callback url under webhook tab.
 
- # Webhook  Response
+ ## Webhook  Response
+ - You can save this callback response in your database 
+ - This response is only sent when ufanisi make a change in your submitted shipments eg Shipment status update eg pending, approved, packaging , transist, delivered etc. 
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
@@ -399,7 +407,7 @@ Here is  list of what our API can do.
 
 
 # API USAGE DEMO.
-Check our demo online shop on how the api can be used at https://apidemo.ufanisicourier.co.ke/
+- Check our demo online shop on how the api can be used at https://apidemo.ufanisicourier.co.ke/
 
  
 
