@@ -25,14 +25,14 @@ The API will return responses in JSON format for any success or failed requests.
 
 ## API RESOURCES.
 Here is  list of what our API can do.
-    1. Register / forward Shipments
-    2. Get Shipments
-    3. Cancel Shipment*
-    4. Edit Shipment*
-    5. Track Shipment
-    6. Get Shipment Rates
-    7. Get Destinations
-    8. Webhooks 
+   - Register / forward Shipments
+   - Get Shipments
+   - Cancel Shipment*
+   - Edit Shipment*
+   - Track Shipment
+   - Get Shipment Rates
+   - Get Destinations
+   - Webhooks 
 
 
 ## THE CODE
@@ -41,9 +41,9 @@ Here is  list of what our API can do.
 - if you're using php and cURL below is cURL function to handle all requests
 
 ```php
-// call this function to process any request to our endpoint 
-// for javascript & other languages, just pass the apikey and required parameters   using POST method.
-// apikey is provided when you register for this service,
+  - call this function to process any request to our endpoint 
+  - for javascript & other languages, just pass the apikey and required parameters   using POST method.
+  - apikey is provided when you register for this service,
 
     function ProcessRequest($data, $headers, $url)
     {
