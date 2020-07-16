@@ -39,14 +39,7 @@ Here is  list of what our API can do.
 
 - Examples here use php / cURL, you can use your preferred programming language as long as you use the correct endpoint and api key for your request .
 - if you're using php and cURL, below is cURL function to handle all requests
-
-```
-  - call this function to process any request to our endpoint 
-  - for javascript & other languages, just pass the apikey and required parameters   using POST method.
-  - apikey is provided when you register for this service,
-
-```
-
+  
 ```php 
     function ProcessRequest($data, $headers, $url)
     {
@@ -111,9 +104,11 @@ Here is  list of what our API can do.
             return $response; 
         }
  ```
+
  ## Register Shipment Response
  - Receive a response with shipmentID and status. Status might be pending or confirmed. You can save this in your database if necessary.
-``` json 
+
+```json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": {
@@ -126,7 +121,8 @@ Here is  list of what our API can do.
 
 ## Cancel Shipment
 - You can cancel shipment using this method by sending your request with  shipmentid,orderid
-``` php
+
+```php
     function cancelShipment(){
             $data= array();
             $data['shipmentid']="";  // also known as waybillnumber
@@ -139,9 +135,11 @@ Here is  list of what our API can do.
             return $response; 
     }
 ```
+
  ## Cancel Shipment Response
  - This is the response you get when you cancel a shipment;
-``` json 
+
+```json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": {
@@ -156,7 +154,7 @@ Here is  list of what our API can do.
 - Track a shipment using this method.  Pass shipment id to each request;
 - You can use this method in your customer tracking interface to query directly from the api. 
 
-``` php
+```php
     function trackShipment(){
             $data= array();
             $data['shipmentid']="";  // also known as waybillnumber
@@ -170,7 +168,8 @@ Here is  list of what our API can do.
 
  ## Track Shipment Response
  - Here is the response you get when you send a tracking request for a shipment.
-``` json 
+
+```json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": { 
@@ -222,7 +221,8 @@ Here is  list of what our API can do.
 
 ## Get All Shipments Request
 - Request for all shipments. You can set maximum number of responses and order by given values.
-``` php
+
+```php
     function getShipments(){
             $data= array();
             $data['counts']="10"; //  set limit, max 100  default 10
@@ -239,7 +239,7 @@ Here is  list of what our API can do.
  - the response you get when you request all shipments as an array.
  - return al list of shipments associated with your API key / Domain.
 
-``` json 
+```json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": [{  
@@ -293,7 +293,8 @@ Here is  list of what our API can do.
 
 ## Get Prices List Shipments Request
 - Get ufanisi courier services price list based on orgin and destination.
-``` php
+
+```php
     function getPricelist(){
             $data= array();
             $data['origin']=""; // required 
@@ -308,7 +309,8 @@ Here is  list of what our API can do.
 
  ## Get  priceList  Response
  - price list response 
-``` json 
+
+```json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": {
@@ -326,7 +328,7 @@ Here is  list of what our API can do.
 ## Get Destinations Request
 - Request all destinations that ufanisi courier services serve.
 
-``` php
+```php
     function getPricelist(){
             $data= array();
             $data['orderby']=""; // default name; 
@@ -341,7 +343,7 @@ Here is  list of what our API can do.
  ## Get  Destinations  Response
  - Destinations Response 
 
-``` json 
+```json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": [{
@@ -350,6 +352,7 @@ Here is  list of what our API can do.
                  }] 
         }
 ```
+
 ## WEBHOOKS
 - Register a tracking webhook.
 - Webhooks typically are used to connect two different applications. When an event happens on the trigger application, it serializes data about that   event and sends it to a webhook URL from the action application—the one you want to do something based on the data from the first application. 
@@ -362,8 +365,8 @@ Here is  list of what our API can do.
  ## Webhook  Response
  - You can save this callback response in your database 
  - This response is only sent when ufanisi make a change in your submitted shipments eg Shipment status update eg pending, approved, packaging , transist, delivered etc. 
- 
-``` json 
+
+```json 
         {
         "status":1,// 1 for success 0 for failed;
         "data": {
