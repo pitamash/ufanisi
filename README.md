@@ -1,16 +1,16 @@
 ## UFANISI COURIER SERVICES  API REFERENCE
--API reference for Ufanisi Courier Services that enables vendors integrate courier tracking services in their website &amp; app powered by ufanisi.
+API reference for Ufanisi Courier Services that enables vendors integrate courier tracking services in their websites &amp; or apps powered by ufanisi.
  
 The purpose of this API is to help you as a merchant and our customer  in offering & automating shipment tracking service to your customers  in your website.
-Once you contract/ partner with  us as your courier service provider, we give you access to our API that enables you to register shipments with us as well as  request all your shipment details from our service to your website or mobile app. 
-The API can be used  by:-
-    1) E-commerce services e.g Online Shops & Marketplace,
-    2) Other Courier Service Providers To Forward shipment to Ufanisi.
+Once you contract or partner with  us as your courier service provider, we give you access to our API that enables you to register shipments with us as well as  request all your shipment details from our service to your website or mobile app. 
+### The API can be used  by:
+    - E-commerce services e.g Online Shops & Marketplace,
+    - Other Courier Service Providers To Forward shipment to Ufanisi.
  
 
 ## FOR DEVELOPERS
 - Before using the Ufanisi API, you need to register on the Ufanisi website to get an API key to use in your API calls. 
-- Please register at:-  https://api.ufanisicourier.co.ke/ .  After registering, you will be able to add your website's domain and get an APIkey. 
+- Please register at:-  https://developer.ufanisicourier.co.ke/ .  After registering, you will be able to add your website's domain and get an APIkey. 
   The APIkey  is a unique code generated when you register your domain for our API usage. 
 - The Ufanisi API is built around REST principles. Use POST requests to create objects requests, GET requests to retrieve objects;
 
@@ -38,7 +38,7 @@ Here is  list of what our API can do.
 ## THE CODE
 
 - Examples here use php / cURL, you can use your preferred programming language as long as you use the correct endpoint and api key for your request .
-- if you're using php and cURL below is cURL function to handle all requests
+- if you're using php and cURL, below is cURL function to handle all requests
 
 ```php
   - call this function to process any request to our endpoint 
@@ -122,7 +122,7 @@ Here is  list of what our API can do.
 ```
 
 ## Cancel Shipment
-- You can cancel shipment using this method sending your request with  shipmentid,orderid
+- You can cancel shipment using this method by sending your request with  shipmentid,orderid
 ``` php
     function cancelShipment(){
             $data= array();
@@ -151,6 +151,8 @@ Here is  list of what our API can do.
 
 ## Track Shipment Request
 - Track a shipment using this method.  Pass shipment id to each request;
+- You can use this method in your customer tracking interface to query directly from the api. 
+
 ``` php
     function trackShipment(){
             $data= array();
@@ -165,7 +167,6 @@ Here is  list of what our API can do.
 
  ## Track Shipment Response
  - Here is the response you get when you send a tracking request for a shipment.
- - You can use this method in your customer tracking interface to query directly from the api. 
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
@@ -350,7 +351,7 @@ Here is  list of what our API can do.
 - You can register your webhook(s) for a Shipments updates, this way, UFANISI  will send HTTP notifications to your provided url  whenever the status changes.
 
 - Your webhook url should be able to receive the data and update your database at anytime or even perform other function like sending SMS & Email notifictions with your own implementation.
-- Login to your account in https://api.ufanis.co.ke and add your callback url under webhook tab.
+- Login to your account in https://developer.ufanisicourier.co.ke and add your callback url under webhook tab.
 
  ## Webhook  Response
  - You can save this callback response in your database 
