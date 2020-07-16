@@ -40,11 +40,14 @@ Here is  list of what our API can do.
 - Examples here use php / cURL, you can use your preferred programming language as long as you use the correct endpoint and api key for your request .
 - if you're using php and cURL, below is cURL function to handle all requests
 
-```php
+```
   - call this function to process any request to our endpoint 
   - for javascript & other languages, just pass the apikey and required parameters   using POST method.
   - apikey is provided when you register for this service,
 
+```
+
+```php 
     function ProcessRequest($data, $headers, $url)
     {
         $curl = curl_init();
@@ -62,7 +65,7 @@ Here is  list of what our API can do.
 ```
 
 ## Register Shipment 
--Below is an example showing how to register a shipment request, put ZERO (0) if value not available.
+- Below is an example showing how to register a shipment request, put ZERO (0) if value not available.
 
 ```php
      function  createShipment() 
@@ -234,8 +237,9 @@ Here is  list of what our API can do.
 
  ## Get All Shipments Response
  - the response you get when you request all shipments as an array.
+ - return al list of shipments associated with your API key / Domain.
+
 ``` json 
-//  return al list of shipments associated with your API key / Domain.
         {
         "status":1,// 1 for success 0 for failed;
         "data": [{  
@@ -321,6 +325,7 @@ Here is  list of what our API can do.
 
 ## Get Destinations Request
 - Request all destinations that ufanisi courier services serve.
+
 ``` php
     function getPricelist(){
             $data= array();
@@ -335,6 +340,7 @@ Here is  list of what our API can do.
 
  ## Get  Destinations  Response
  - Destinations Response 
+
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
@@ -356,6 +362,7 @@ Here is  list of what our API can do.
  ## Webhook  Response
  - You can save this callback response in your database 
  - This response is only sent when ufanisi make a change in your submitted shipments eg Shipment status update eg pending, approved, packaging , transist, delivered etc. 
+ 
 ``` json 
         {
         "status":1,// 1 for success 0 for failed;
