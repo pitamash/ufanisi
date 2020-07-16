@@ -15,10 +15,10 @@ The API can be used  by:-
 - The Ufanisi API is built around REST principles. Use POST requests to create objects requests, GET requests to retrieve objects;
 
 ## API ENDPOINT
-Endpoint for all API  calls will be. https://api.ufanisicourier.co.ke/live/ replace {live} with sandbox if you’re in testing mode.
+Endpoint for all API  calls will be. https://api.ufanisicourier.co.ke/
 
 ## API REQUESTS 
-Request data is passed to the API by POSTing JSON objects with the appropriate key/value-pairs to the endpoint i.e https://api.ufanisicourier.co.ke/live/  (as we will be showing you below).
+Request data is passed to the API by POSTing JSON objects with the appropriate key/value-pairs to the endpoint i.e https://api.ufanisicourier.co.ke/ (as we will be showing you below).
 
 ## API RESPONSE 
 The API will return responses in JSON format for any success or failed requests.
