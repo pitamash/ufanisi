@@ -1,22 +1,18 @@
-# ufanisi
-API reference for Ufanisi Courier Services that enables vendors integrate courier tracking services in their website &amp; app powered by ufanisi.
----
-title: UFANISI COURIER SERVICES API PREVIEW
-description: DEVELOPER API GUIDE.
----
-
-<!---
+## UFANISI COURIER SERVICES  API REFERENCE
+-API reference for Ufanisi Courier Services that enables vendors integrate courier tracking services in their website &amp; app powered by ufanisi.
+ 
 The purpose of this API is to help you as a merchant and our customer  in offering & automating shipment tracking service to your customers  in your website.
 Once you contract/ partner with  us as your courier service provider, we give you access to our API that enables you to register shipments with us as well as  request all your shipment details from our service to your website or mobile app. 
 The API can be used  by:-
     1) E-commerce services e.g Online Shops & Marketplace,
     2) Other Courier Service Providers To Forward shipment to Ufanisi.
--->
+ 
 
-# FOR DEVELOPERS
+## FOR DEVELOPERS
 - Before using the Ufanisi API, you need to register on the Ufanisi website to get an API key to use in your API calls. 
-- Please register at: https://api.ufanisicourier.co.ke/    After registering, you will be able to add your website's domain and get an access api key. The API - key  is a unique code generated when you register your domain for our API usage. 
-- The Ufanisi API is built around REST principles. Use POST requests to create objects requests, GET requests to retrieve objects, and PUT requests to  -update object.
+- Please register at:-  https://api.ufanisicourier.co.ke/ .  After registering, you will be able to add your website's domain and get an APIkey. 
+  The APIkey  is a unique code generated when you register your domain for our API usage. 
+- The Ufanisi API is built around REST principles. Use POST requests to create objects requests, GET requests to retrieve objects;
 
 ## API ENDPOINT
 Endpoint for all API  calls will be. https://api.ufanisicourier.co.ke/live/ replace {live} with sandbox if you’re in testing mode.
@@ -24,10 +20,10 @@ Endpoint for all API  calls will be. https://api.ufanisicourier.co.ke/live/ repl
 ## API REQUESTS 
 Request data is passed to the API by POSTing JSON objects with the appropriate key/value-pairs to the endpoint i.e https://api.ufanisicourier.co.ke/live/  (as we will be showing you below).
 
-# API RESPONSE 
+## API RESPONSE 
 The API will return responses in JSON format for any success or failed requests.
 
-# API RESOURCES.
+## API RESOURCES.
 Here is  list of what our API can do.
     1. Register / forward Shipments
     2. Get Shipments
@@ -39,15 +35,16 @@ Here is  list of what our API can do.
     8. Webhooks 
 
 
-# THE CODE
+## THE CODE
 
-# examples here use php / cURL, you can use your preferred programming language as long as you use the correct endpoint and api key for your request .
-# if you're using php and cURL below is cURL function to handle all requests
+- Examples here use php / cURL, you can use your preferred programming language as long as you use the correct endpoint and api key for your request .
+- if you're using php and cURL below is cURL function to handle all requests
 
 ```php
 // call this function to process any request to our endpoint 
 // for javascript & other languages, just pass the apikey and required parameters   using POST method.
 // apikey is provided when you register for this service,
+
     function ProcessRequest($data, $headers, $url)
     {
         $curl = curl_init();
@@ -404,15 +401,5 @@ Here is  list of what our API can do.
 # API USAGE DEMO.
 Check our demo online shop on how the api can be used at https://apidemo.ufanisicourier.co.ke/
 
-
-
-	 
-
-
-
-
-
-
-
-
  
+
