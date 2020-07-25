@@ -443,7 +443,7 @@ Here is  list of what our API can do.
 
 
 # API USAGE DEMO.
-- Check our demo online shop on how the api can be used at https://ufanisicourier.co.ke/apidemo/
+- Check our demo  on how the api can be used to forward and track your shipments at https://ufanisicourier.co.ke/apidemo/
 
  
 
