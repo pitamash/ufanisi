@@ -8,7 +8,7 @@ Once you contract or partner with  us as your courier service provider, we give 
 - Other Courier Service Providers To Forward shipment to Ufanisi.
 
 ### HOW TO GET THE API
---Please visit https://ufanisicourier.co.ke/ and subimit a request or call us.
+--Please visit https://ufanisicourier.co.ke/main/pg/contact/ and subimit a request or call us.
 
  
 
